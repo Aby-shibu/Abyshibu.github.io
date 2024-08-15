@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Registration</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="formstyle.css">
+</head>
+<body>
+<div class="formcontainer container">
+	<div class="row">
+	<h2>Registration Form</h2>
+	<form action="rgister.php" method="post">
+		<label>Username</label>
+		<input type="text" name="uname" id="unme"placeholder="Enter your name" required>
+		<label>Email</label>
+        <input type="email" name="email"id="email" placeholder="Enter your email" required>
+		<label>Password</label>
+        <input type="Password" name="pass"id="pass" placeholder="Enter your password" required>
+		<label>Confirm password</label>
+        <input type="Password"id="confirmpass"  placeholder="Re-enter your password"required>
+		<label>Phone</label>
+		<input type="tel" name="phone"id="phone" placeholder="Mobile no" required>
+		<label>Address</label>
+		<input type="textarea" name="address"id="address" placeholder="Enter your present address" required>
+		<button type="submit" onclick="return validate()">Submit</button>
+	</form>
+	<p>already have an account? <a href="login.html">login</a></p>
+	</div>
+</div>
+	<script type="text/javascript">
+		function validate() {
+    
+    var usernameInput = document.getElementById("unme");
+    var emailInput = document.getElementById("email");
+    var phoneInput = document.getElementById("phone");
+    var passwordInput = document.getElementById("pass");
+    var confirmPasswordInput = document.getElementById("confirmpass");
+    var addressInput = document.getElementById("address");
+
+   
+    usernameInput.placeholder = "Enter your username";
+    emailInput.placeholder = "Enter your email";
+    phoneInput.placeholder = "Enter your phone number";
+    passwordInput.placeholder = "Enter your password";
+    confirmPasswordInput.placeholder = "Confirm your password";
+    addressInput.placeholder = "Enter your address";
+
+    
+    usernameInput.classList.remove("input-error");
+    emailInput.classList.remove("input-error");
+    phoneInput.classList.remove("input-error");
+    passwordInput.classList.remove("input-error");
+    confirmPasswordInput.classList.remove("input-error");
+    addressInput.classList.remove("input-error");
+
+    var username = usernameInput.value.trim();
+    var email = emailInput.value.trim();
+    var phone = phoneInput.value.trim();
+    var password = passwordInput.value.trim();
+    var confirmPassword = confirmPasswordInput.value.trim();
+    var address = addressInput.value.trim();
+
+    var isValid = true;
+
+    
+    if (username === "") {
+        usernameInput.placeholder = "Username cannot be empty";
+        usernameInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    
+    if (email === "") {
+        emailInput.placeholder = "Email cannot be empty";
+        emailInput.classList.add("input-error");
+        isValid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+        emailInput.placeholder = "Enter a valid email";
+        emailInput.value = "";
+        emailInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    
+    if (phone === "") {
+        phoneInput.placeholder = "Phone number cannot be empty";
+        phoneInput.classList.add("input-error");
+        isValid = false;
+    } else if (!/^\d{10}$/.test(phone)) {
+        phoneInput.placeholder = "Enter a valid 10-digit phone number";
+        phoneInput.value = "";
+        phoneInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    if (password === "") {
+        passwordInput.placeholder = "Password cannot be empty";
+        passwordInput.classList.add("input-error");
+        isValid = false;
+    } else if (password.length < 6) {
+        passwordInput.placeholder = "Must be at least 6 characters";
+        passwordInput.value = "";
+        passwordInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    
+    if (confirmPassword === "") {
+        confirmPasswordInput.placeholder = "Confirm password cannot be empty";
+        confirmPasswordInput.classList.add("input-error");
+        isValid = false;
+    } else if (confirmPassword !== password) {
+        confirmPasswordInput.placeholder = "Passwords do not match";
+        confirmPasswordInput.value = "";
+        confirmPasswordInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    if (address === "") {
+        addressInput.placeholder = "Address cannot be empty";
+        addressInput.classList.add("input-error");
+        isValid = false;
+    }
+
+    
+    return isValid;
+}
+
+	</script>
+	
+
+
+</body>
+</html>
