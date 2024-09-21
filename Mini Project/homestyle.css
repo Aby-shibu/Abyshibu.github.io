@@ -1,0 +1,51 @@
+body{
+    background-color: floralwhite;
+}
+
+.navbar{
+   background-color: #d6d2c4;
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+
+}
+.nav-link.btn:hover{
+
+    color: blue;
+
+}
+.navbar-brand{
+    margin-left:5px ;
+    font-size: 34px;
+}
+.nav-link{
+    margin-right:40px;
+    color: black;
+}
+.nav-link:hover{
+    border-radius:10px ;
+    
+
+}
+h4{
+    margin:30px;
+}
+.row{
+    margin-top: 10px;
+}
+}
+.img-fluid{
+    border-radius: 10px;
+}
+.block{
+     background: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); 
+    scroll-margin-top: 50px;
+    padding: 20px;
+    margin-bottom: 20px;
+
+}
+.footer a{
+    text-decoration: none;
+}

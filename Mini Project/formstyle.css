@@ -1,0 +1,49 @@
+body {
+    background:url("https://elements-resized.envatousercontent.com/elements-cover-images/c92746fe-34bd-48d2-bf86-8277d1145444?w=2038&cf_fit=scale-down&q=85&format=auto&s=a8f7ec36e37b7ba7ea8d5d36ae9bced49c1c84134fe04d0346f758f70163d823") ;
+  background-repeat: no-repeat;
+ 
+  background-size: 100%;
+}
+
+.formcontainer {
+    margin-top: 20px;
+}
+
+.card {
+     background: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(5px); 
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+    border: none;
+    
+
+.card-body {
+    padding: 30px;
+}
+
+.input-error {
+    border-color: #dc3545;
+}
+
+.input-error::placeholder {
+    color: #dc3545;
+}
+
+button {
+    font-size: 16px;
+    padding: 10px;
+}
+ a{
+    text-decoration: none;
+}
+.form-control input{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);  ;
+}
+.input-error {
+            border-color: red;
+ }
+.error {
+            color: red;
+            font-size: 0.875em;
+}
